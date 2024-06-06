@@ -153,7 +153,7 @@ for number in numbers:
 1.) len:-can be used to calculate length of our data structure 
 2.)id:-function returns the unique identifier (memory address) of an object.
 3.)type:-tell the type of a variable used 
-4.)range:- used to print value from a specific range
+4.)range:- used to print value from a specific range'''
 
 
 
