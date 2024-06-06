@@ -68,3 +68,58 @@ def print_person_info(name, age, **kwargs):
         for key, value in kwargs.items():
             print(f"{key}: {value}")
 print_person_info("Alice", 30, city="New York", occupation="Engineer")
+
+#lambda function
+'''in Python a lambda function is a small anonymous function defined using the lambda keyword. Lambda functions can take any number of arguments, but they can only have one expression. They are often used as a shortcut for simple functions where defining a full function using def is unnecessary or cumbersome.
+'''
+# syntax:-lambda arguments : expression
+#example :-
+add = lambda x, y: x + y
+print(add(2, 3))  # Output: 5
+
+
+# question :- sorting using lambda function:-
+numbers = input("Enter a list of numbers separated by spaces: ").split()
+numbers = [int(num) for num in numbers]
+sorted_numbers = sorted(numbers, key=lambda x: x)
+print("Sorted numbers:", sorted_numbers)
+
+'''Key Points about Lambda Function:-
+1.They are ideal for short and simple expressions
+2.They cannot contain complex statements like if or for loops
+3.They are often used for quick  throwaway functions withing larger expressions
+4.They can be a powerful tool when used appropriately but they might not always be the most readable option for complex logic
+'''
+
+
+# map function:-The map() function returns an iterator that yields the results of applying the specified function to each element of the iterable one by one.
+'''It takes two arguments:
+A function to be applied to each element. This can be a named function or a lambda function
+An iterable (list, tuple, etc.) containing the elements to be processed'''
+#example:-
+def square(x):
+    return x ** 2
+numbers = [1, 2, 3, 4, 5]
+squared_numbers = map(square, numbers)
+print(list(squared_numbers))  # Output: [1, 4, 9, 16, 25]
+
+
+
+# filter function:- the filter() function is a builtin function used to filter elements from an iterable (such as a list tupleor string) based on a specified condition
+def is_even(num):
+    return num % 2 == 0
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+even_numbers = filter(is_even, numbers)
+print(list(even_numbers))  # Output: [2, 4, 6, 8, 10]
+
+
+# reduce function:-The reduce() function applies a function of two arguments cumulatively to the items of an iterable, from left to right, so as to reduce the iterable to a single value.
+# syntax:- functools.reduce(function, iterable[, initializer])
+from functools import reduce
+
+# Define a function to add two numbers
+def add(x, y):
+    return x + y
+numbers = [1, 2, 3, 4, 5]
+sum_of_numbers = reduce(add, numbers)
+print("Sum of numbers:", sum_of_numbers)  # Output: 15
