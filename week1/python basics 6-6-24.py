@@ -52,12 +52,12 @@ b = 3
 
 # Arithmetic Operators
 print(a + b)  # Addition: 13
-print(a - b)  # Subtraction: 7
-print(a * b)  # Multiplication: 30
-print(a / b)  # Division: 3.3333333333333335
+print(a - b) # Subtraction: 7
+print(a * b)    # Multiplcation: 30
+print(a / b) # Divisin: 3.3333333333333335
 print(a // b) # Floor Division: 3
-print(a % b)  # Modulus: 1
-print(a ** b) # Exponentiation: 1000
+print(a % b)  # Modlus: 1
+print(a ** b)  # Expo'entiation: 1000
 
 # Comparison Operators
 print(a == b) # Equal to: False
@@ -96,3 +96,64 @@ print ('Modulo: ', a % b)
 
 # a to the power b
 print ('Power: ', a ** b) 
+
+# conditional statements
+'''Conditional Statements
+The if statement executes a block of code if a specified condition is true.
+The elif (short for "else if") statement provides additional conditions to check if the previous conditions were false.
+The else statement specifies a block of code to execute if none of the previous conditions were true.
+Conditions in if, elif, and else statements must evaluate to a boolean value (True or False).'''
+# example
+number = 15
+if number > 20:
+    print("The number is greater than 20.")
+elif number > 10:
+    print("The number is greater than 10 but less than or equal to 20.")
+elif number > 5:
+    print("The number is greater than 5 but less than or equal to 10.")
+else:
+    print("The number is 5 or less.")
+
+# looping statement :- these are used to implement thing until the condtion is true or limit is reached
+# these are of 2 types :- 1.) while looping 2.) for looping
+# example of while looping:- this a looping statement which work on condition
+
+while number <= 5:
+    print(number)
+    number += 1  # Increment the number by 1
+
+# example of for looping statement:-
+numbers = [1, 2, 3, 4, 5]
+for number in numbers:
+    print(number)
+
+
+# jumping statements:-
+''' jumping statement are of 2 type:_
+1.) break:- it terminate the loop
+2.) continue:- it skip when some condition get true'''
+# example:-
+print("Using break:")
+# Use a for loop to print numbers until a certain condition is met
+for number in numbers:
+    if number == 6:
+        break  # Exit the loop when the number is 6
+    print(number)
+
+print("\nUsing continue:")
+# Use a for loop to skip printing certain numbers
+for number in numbers:
+    if number % 2 == 0:
+        continue  # Skip the rest of the loop body for even numbers
+    print(number)
+
+
+# special function
+''' some special function of python are:-
+1.) len:-can be used to calculate length of our data structure 
+2.)id:-function returns the unique identifier (memory address) of an object.
+3.)type:-tell the type of a variable used 
+4.)range:- used to print value from a specific range
+
+
+
