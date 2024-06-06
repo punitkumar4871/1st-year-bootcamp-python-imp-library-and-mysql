@@ -123,3 +123,58 @@ def add(x, y):
 numbers = [1, 2, 3, 4, 5]
 sum_of_numbers = reduce(add, numbers)
 print("Sum of numbers:", sum_of_numbers)  # Output: 15
+
+
+
+#practise qustion 1:-Create a function Calculate_area(shape, dimensions) that takes the shape (e.g., "rectangle", "circle") and its dimensions as arguments.
+#The function should calculate the area based on the shape and return the result.
+import math
+
+def calculate_area(shape, dimensions):
+    if shape == "rectangle":
+        
+        length, width = dimensions
+        return length * width
+    elif shape == "circle":
+        radius = dimensions
+        return math.pi * radius ** 2
+    else:
+        return "Invalid shape"
+print("Area of rectangle:", calculate_area("rectangle", (5, 3)))
+print("Area of circle:", calculate_area("circle", 2)) 
+
+#practise question2:-Create a function reverse_words(text) that takes a string as input.
+def reverse_words(text):
+    words = text.split()
+    reversed_words = words[::-1]
+    reversed_text = ' '.join(reversed_words)
+
+    return reversed_text
+text = "Hello world! This is a test."
+print("Original text:", text)
+print("Reversed text:", reverse_words(text))
+
+#practise question3:-Create a function analyze_list(numbers) that takes a list of numbers as input.
+#The function should calculate and return the following in a dictionary Minimum value in the list
+
+def analyze_list(numbers):
+    if not numbers:
+        return {"min": None, "max": None, "avg": None}
+
+    min_value = min(numbers)
+    max_value = max(numbers)
+    avg_value = sum(numbers) / len(numbers)
+
+    return {"min": min_value, "max": max_value, "avg": avg_value}
+numbers = [1, 2, 3, 4, 5]
+analysis = analyze_list(numbers)
+print("Analysis:", analysis)
+
+#pracise question 4:-Create a list of product names (strings).
+#Define a function filter_short_names(names, max_length) that takes the list of names and a maximum length as arguments.
+def filter_short_names(names, max_length):
+    return list(filter(lambda name: len(name) < max_length, names))
+product_names = ["Apple", "Banana", "Grapes", "Strawberry", "Pineapple"]
+max_length = 6
+short_names = filter_short_names(product_names, max_length)
+print("Product names shorter than", max_length, "characters:", short_names)
