@@ -277,6 +277,69 @@ class MyClass:
 obj = MyClass()
 obj.set_hidden_var(10)  # Sets the hidden variable to 10
 print(obj.get_hidden_var())  # Output: 10
+
+
+
+#static variable and methods;-
+
+
+# as we have studied that each object have its own valuei.e instances but sometime we need staic variable i.e they should affect each other i.e if we are counting something 
+#efg:- degree static and cgpa:- instant
+#NOte:_ static veriable is created before contructor and instant are created undere constructor
+
+class Atm:
+    #static
+    counter=1
+    def __init__(self):   #init is a constructor:special method  jiske andar ka code automatically executive when u make class
+        self.pin="" # these are variable
+        self.balance=0
+        self.sno=Atm.counter+1
+        Atm.counter=Atm.counter+1
+        self.menu()# callinf for mathod
+
+    def menu(self):
+        user_input=input("hello how would u like to proceed?\n1.enter 1 to create pin \n 2. enter 2 to deposit \n 3.) enter 3 to withdraw \n 4. enter 4 to chekc balance \n 5. enter 5 to exit")
+        if user_input=="1":
+            self.create_pin()
+        elif user_input=="2":
+            self.deposit()
+        elif user_input=="3":
+            self.withdraw()
+        elif user_input=="4":
+            self.check_balance()
+        else:
+            print("Exit")
+    def create_pin(self):
+        self.pin=input("enter your pin")
+        print("pin set succesfully")
+    def deposit(self):
+        temp=input("enter your pin")
+        if temp==self.pin:
+            amount=int(input("enter amount to be deposited"))
+            self.balance=self.balance + amount
+            print("deposit successfull")
+    def withdraw(self):
+        temp=input("enter your pin")
+        if temp==self.pin:
+            amount=int(input("enter amoun tot be withdrawn"))
+            if amount<self.balance:
+                self.balance=self.balance-amount
+                print("withdraw succesfull")
+            else:
+                print("invalid pin")
+    def check_balance(self):
+        temp=input("enter your pin")
+        if temp == self.pin:
+            print(self.balance)
+        else:
+            print("invalid pin")
+c1=Atm()
+c2=Atm()
+c3=Atm()
+c1.sno  #1
+
+c2.sno #2
+c3.sno #3
      
 
 
