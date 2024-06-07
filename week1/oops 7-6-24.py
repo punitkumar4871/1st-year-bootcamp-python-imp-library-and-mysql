@@ -340,7 +340,99 @@ c1.sno  #1
 
 c2.sno #2
 c3.sno #3
+
+
+
+#inheritance:-
+'''nheritance is a fundamental concept in object-oriented programming (OOP) that allows a class (known as a subclass or derived class) to inherit properties and behaviors 
+(methods) from another class (known as a superclass or base class)This mechanism promotes code reusability and establishes a natural hierarchy between classes.'''
      
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound."
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks."
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} meows."
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+print(dog.speak())  
+print(cat.speak()) 
+
+
+
+#polymorphism:-
+'''polymorphism is a core concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common superclassIt provides a way to perform a single action in different forms. 
+Polymorphism enhances the flexibility and maintainability of the code by enabling a single interface to represent different underlying forms (data types)'''
+
+class Animal:
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Dog(Animal):
+    def speak(self):
+        return "Bark"
+class Cat(Animal):
+    def speak(self):
+        return "Meow"
+class Bird(Animal):
+    def speak(self):
+        return "Chirp"
+def make_animal_speak(animal):
+    print(animal.speak())
+dog = Dog()
+cat = Cat()
+bird = Bird()
+make_animal_speak(dog)  
+make_animal_speak(cat)  
+make_animal_speak(bird)
+
+
+
+
+#decorators:-
+'''Decorators in object-oriented programming (OOP) are a design pattern that allows behavior to be added to individual objects, dynamically, without affecting 
+the behavior of other objects from the same class. In Python, decorators are a powerful and expressive way to modify or extend the behavior of functions or methods.'''
+import time
+
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"{func.__name__} took {end_time - start_time:.4f} seconds to execute.")
+        return result
+    return wrapper
+@timing_decorator
+def example_function():
+    time.sleep(2)
+    print("Function execution completed.")
+example_function()
+
+
+
+# generators
+''' generators are a specific type of iterator, implemented using the yield keyword in Python.They allow for the creation of iterators in a simpler
+and more memory-efficient way compared to traditional iterators'''
+#-eg- print fibo series:-
+def fibonacci_generator(limit):
+    a, b = 0, 1
+    while a <= limit:
+        yield a
+        a, b = b, a + b
+for num in fibonacci_generator(10):
+    print(num)
+
+
+# Method overloading
+
+#Method overloading is a feature in some programming languages that allows a class to have multiple methods with the same name but different parameter lists
+
 
 
 
