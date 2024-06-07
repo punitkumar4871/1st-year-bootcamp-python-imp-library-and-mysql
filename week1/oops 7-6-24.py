@@ -197,6 +197,30 @@ cust=Customer("ankita","female")
 greet(cust)
 
 
+# here both customer and cust toward same point therfore their ids are also same
+# in mutable object classes are also mutable address remain same after insertio or some changes and in immutable addresses changes
+
+
+
+
+# collection of objects
+# we can collect object in oops
+#ex:-
+
+class Customer:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+c1=Customer('nitish',34)
+c2=Customer('ankita',45)
+c3=Customer('punit',19)
+
+l=[c1,c2,c3]
+for i in l:
+    print(i.name,i.age)
+    
+
+
 
 
 
