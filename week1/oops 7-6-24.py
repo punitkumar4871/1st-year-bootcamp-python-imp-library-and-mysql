@@ -111,6 +111,73 @@ class Fraction:
 
 
 
+# encapsulation
+
+
+# encapsulation:- 
+# Encapsulation is the principle of bundling data and methods within a single unit (class). It helps in hiding the internal implementation details of an object from the outside world, providing a well-defined interface to interact with the object.
+# # instance variale :- variable which are made inside init class are known as insatnce varibale
+# there valuw are different for different object
+# one disadvantage of code whihc we made earlier was like we can check balance by instance variable i.e we can check by
+''' spi.balance which will show our balance without our pin ideally w should do sbi.check_balance '''
+''' same with pin also he can chekc our pin'''
+# so for this we use __ before our instance variable
+class Atm:
+    def __init__(self):   #init is a constructor:special method  jiske andar ka code automatically executive when u make class
+        self.__pin="" # these are variable
+        self.__balance=0
+        self.menu()  # callinf for mathod 
+    def menu(self):
+        user_input=input("hello how would u like to proceed?\n1.enter 1 to create pin \n 2. enter 2 to deposit \n 3.) enter 3 to withdraw \n 4. enter 4 to chekc balance \n 5. enter 5 to exit")
+        if user_input=="1":
+            self.create_pin()
+        elif user_input=="2":
+            self.deposit()
+        elif user_input=="3":
+            self.withdraw()
+        elif user_input=="4":
+            self.check_balance()
+        else:
+            print("Exit")
+    def create_pin(self):
+        self.__pin=input("enter your pin")
+        print("pin set succesfully")
+    def deposit(self):
+        temp=input("enter your pin")
+        if temp==self.__pin:
+            amount=int(input("enter amount to be deposited"))
+            self.__balance=self.__balance + amount
+            print("deposit successfull")
+    def withdraw(self):
+        temp=input("enter your pin")
+        if temp==self.__pin:
+            amount=int(input("enter amoun tot be withdrawn"))
+            if amount<self.__balance:
+                self.__balance=self.__balance-amount
+                print("withdraw succesfull")
+            else:
+                print("invalid pin")
+    def check_balance(self):
+        temp=input("enter your pin")
+        if temp == self.__pin:
+            print(self.__balance)
+        else:
+            print("invalid pin")
+"""now we cannot access our data with data memeber"""
+# this hides our our data member but in python nothing is properly private 
+# our balance is not properly hiden just it save out data lile _Atm__balance therfefore if anyone know your data member name and class name then he can access your data
+''' but still if we want that someone can change and see our thng then we can use
+1.) get 
+2.)set '''
+''' this is made for emergency that if u wan tot chekc in emergency u can check it u can also change it but using my logic'''
+
+'''this all things combining is called encapsulation'''
+
+
+
+
+
+
 
 
 
