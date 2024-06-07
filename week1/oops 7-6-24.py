@@ -175,6 +175,30 @@ class Atm:
 
 
 
+# refernce variable:-
+# while creating object the variable whihc is used is called as reference variable. i.e in above code hdfc or sbi can be reference variable
+
+
+
+# pass by refernce 
+# this state the we can pass object form one function to other
+#eg:-
+class Customer :
+    def __init__(self,name,gender):
+        self.name=name
+        self.gender=gender
+
+def greet(customer):
+    if customer.gender=="male":
+        print("hello",customer.name,"sir")
+    else:
+        print("hello",customer.name,"maam")
+cust=Customer("ankita","female")
+greet(cust)
+
+
+
+
 
 
 
