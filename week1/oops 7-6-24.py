@@ -179,8 +179,9 @@ class Atm:
 # while creating object the variable whihc is used is called as reference variable. i.e in above code hdfc or sbi can be reference variable
 
 
-
 # pass by refernce 
+
+
 # this state the we can pass object form one function to other
 #eg:-
 class Customer :
@@ -218,7 +219,65 @@ c3=Customer('punit',19)
 l=[c1,c2,c3]
 for i in l:
     print(i.name,i.age)
-    
+
+
+
+
+#Data Abstraction
+'''Abstraction is the principle of exposing only the essential features of an object to the outside world while hiding the unnecessary implementation details.
+'''
+class Employee:
+    def __init__(self, name, age, salary):
+        # Public attributes
+        self.name = name
+        self.age = age
+        
+        # Private attribute
+        self.__salary = salary
+
+    def get_salary(self):
+        # Method to retrieve the salary
+        return self.__salary
+
+    def set_salary(self, new_salary):
+        # Method to update the salary
+        if new_salary > 0:
+            self.__salary = new_salary
+        else:
+            print("Invalid salary")
+
+# Create an instance of the Employee class
+employee = Employee("John", 30, 5000)
+
+# Retrieve the salary using the get_salary method
+print(employee.get_salary())  # Output: 5000
+# Update the salary using the set_salary method
+employee.set_salary(6000)
+
+# Retrieve the updated salary
+print(employee.get_salary())  # Output: 6000
+
+
+
+
+
+# Data Hiding
+'''Data hiding is a technique used to prevent direct access to an object's internal data from outside the class
+   ''' 
+# we use hidden var in it
+class MyClass:
+    def __init__(self):
+         self.__hidden_var = 0  # Hidden variable, initialized with 0
+
+    def get_hidden_var(self):
+         return self.__hidden_var  # Returns the value of the hidden variable
+
+    def set_hidden_var(self, value):
+         self.__hidden_var = value  # Updates the hidden variable with the provided value
+obj = MyClass()
+obj.set_hidden_var(10)  # Sets the hidden variable to 10
+print(obj.get_hidden_var())  # Output: 10
+     
 
 
 
