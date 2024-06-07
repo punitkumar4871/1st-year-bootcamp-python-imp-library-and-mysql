@@ -82,7 +82,11 @@ class Atm:
 # we can see in above code that init want access of menu and menu want access of method below it we cannot connet them without self.
 
 '''example 2:- we will create a class i.e a new data strucutre which can handle fraction without converting it in decimal'''
+
+
 # def __str__ :_ return string it transport to this point 
+
+
 class Fraction:
     def __init__(self,n,d):
         self.num=n
@@ -90,7 +94,11 @@ class Fraction:
     def __str__(self):
         return "{}/{}".format(self.n,self.d)
     # now we will add sub methd in i now it cannot add bcz we havent mention how to add. we can unserstand it by set like its a class where add method is also not there therfore wecant add set
-    # __add__ :- when we add (use +) it take us to add consructor
+   
+     
+     # __add__ :- when we add (use +) it take us to add consructor
+    
+     
     def __add__(self,other): 
         temp_num=self.num* other.den +other.num*self.den
         temp_den=self.den * other.den
