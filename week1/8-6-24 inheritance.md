@@ -102,10 +102,83 @@ buying a smartphone '''
 '''this is called method overriding'''
 
 
+# example5:- Single Inheritance
+Single inheritance allows a class to inherit from a single parent class.
 
+```python 
+class Animal:
+    def speak(self):
+        print("Animal speaks")
 
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
 
+dog = Dog()
+dog.speak()  # Output: Animal speaks
+dog.bark()   # Output: Dog barks
+```
+# example:- 6 Multiple Inheritance
+Multiple inheritance allows a class to inherit from multiple parent classes.
+```python
+class A:
+    def method_A(self):
+        print("Method A")
 
+class B:
+    def method_B(self):
+        print("Method B")
+
+class C(A, B):
+    pass
+
+c = C()
+c.method_A()  
+c.method_B()  
+```
+# example 7:- Multilevel Inheritance
+Multilevel inheritance involves a class inheriting from another class that is also a derived class.
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Mammal(Animal):
+    def run(self):
+        print("Mammal runs")
+
+class Dog(Mammal):
+    def bark(self):
+        print("Dog barks")
+
+dog = Dog()
+dog.speak()  
+dog.run()    
+dog.bark()   
+```
+# example 8:- Hierarchical Inheritance
+Hierarchical inheritance involves multiple derived classes inheriting from a single base class.
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def meow(self):
+        print("Cat meows")
+
+dog = Dog()
+dog.speak()  # Output: Animal speaks
+dog.bark()   # Output: Dog barks
+
+cat = Cat()
+cat.speak()  # Output: Animal speaks
+cat.meow()   # Output: Cat meows
+```
 
 
 
