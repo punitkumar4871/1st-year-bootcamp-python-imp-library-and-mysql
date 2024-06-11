@@ -34,7 +34,7 @@ text_widget = Text(master, options)
 
 ## Example: Simple Note-Taking App
 ```python
-This example demonstrates creating a simple note-taking application using the `Text` widget.
+#This example demonstrates creating a simple note-taking application using the `Text` widget.
 
 import tkinter as tk
 from tkinter import messagebox
