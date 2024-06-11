@@ -33,33 +33,30 @@ text_widget = Text(master, options)
 - **tag_configure(tag, options)**: Configure text tags.
 
 ## Example: Simple Note-Taking App
-
+```python
 This example demonstrates creating a simple note-taking application using the `Text` widget.
 
-```python
 import tkinter as tk
 from tkinter import messagebox
 
-def save_note():
-    note_content = text.get("1.0", tk.END).strip()
-    if note_content:
-        with open("note.txt", "w") as file:
-            file.write(note_content)
-        messagebox.showinfo("Success", "Note saved!")
+def show_content():
+    content = text.get("1.0", tk.END).strip()
+    if content:
+        messagebox.showinfo("Text Content", content)
     else:
-        messagebox.showwarning("Warning", "Note is empty.")
+        messagebox.showwarning("Warning", "Text box is empty.")
 
 # Main application window
 root = tk.Tk()
-root.title("Note-Taking App")
+root.title("Simple Text Editor")
 
 # Text widget configuration
-text = tk.Text(root, height=15, width=50, font=("Arial", 12), wrap=tk.WORD, bg="lightblue")
+text = tk.Text(root, height=10, width=40, font=("Arial", 12), wrap=tk.WORD, bg="lightgrey")
 text.pack(pady=20)
 
-# Save button configuration
-save_button = tk.Button(root, text="Save Note", command=save_note)
-save_button.pack(pady=10)
+# Show Content button configuration
+show_button = tk.Button(root, text="Show Content", command=show_content)
+show_button.pack(pady=10)
 
 # Run the application
 root.mainloop()
