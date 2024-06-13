@@ -1,21 +1,19 @@
-MySQL Connectivity with Python
-Introduction
+# MySQL Connectivity with Python
+# Introduction
 Connecting a Python application to a MySQL database is essential for many data-driven applications. This guide provides step-by-step instructions for setting up MySQL connectivity using the mysql-connector-python library.
 
-Prerequisites
+# Prerequisites
 Python installed on your system
 MySQL server running and accessible
 mysql-connector-python library installed (install using pip install mysql-connector-python)
-Installation
+## Installation
 To install the MySQL connector for Python, run:
-
-sh
-Copy code
+```python
 pip install mysql-connector-python
-Establishing a Connection
-Basic Connection Example
-python
-Copy code
+```
+# Establishing a Connection
+### Basic Connection Example
+```python
 import mysql.connector
 from mysql.connector import Error
 
@@ -42,10 +40,11 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
-Performing SQL Queries
-Select Query Example
-python
-Copy code
+```
+
+# Performing SQL Queries
+### Select Query Example
+```python
 import mysql.connector
 from mysql.connector import Error
 
@@ -74,10 +73,10 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
-Inserting Data
+```
+# Inserting Data
 Insert Query Example
-python
-Copy code
+```python
 import mysql.connector
 from mysql.connector import Error
 
@@ -105,10 +104,9 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
-Error Handling
-Example with Error Handling
-python
-Copy code
+```
+# Error Handling
+```python
 import mysql.connector
 from mysql.connector import Error
 
@@ -135,12 +133,13 @@ finally:
         cursor.close()
         connection.close()
         print("MySQL connection is closed")
-Closing the Connection
+```
+# Closing the Connection
 Always ensure the connection is closed after operations are completed to avoid any potential issues:
 
-python
-Copy code
+```python
 if connection.is_connected():
     cursor.close()
     connection.close()
     print("MySQL connection is closed")
+```
