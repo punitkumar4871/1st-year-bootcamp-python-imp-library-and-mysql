@@ -1,3 +1,3 @@
 # python-basics-and-function-
 </br>
-this repositary contain python basics and its function
+this repositary contain python,sql, and python libraries like numpy, pandas,matplotlib,seaborn.
